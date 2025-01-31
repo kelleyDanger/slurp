@@ -14,6 +14,8 @@ Run the website locally by running `go run main.go` and visiting [localhost:8080
 ## TODO
 - purchase domain name, point to ec2 instance
 - create terraform for server setup
+- set up https
+- set up redirect :80 to :8080
 
 ## How To Install
 1. [Install Go](https://go.dev/dl/)
