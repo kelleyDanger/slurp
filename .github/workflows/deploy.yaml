@@ -49,10 +49,10 @@ jobs:
     - name: Deploy to EC2
       run: |
         # Copy the compiled Go app to the EC2 instance
-        scp -i /tmp/private_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ./myapp ec2-user@<EC2_PUBLIC_IP>:~/myapp
+        scp -i /tmp/private_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ./myapp ec2-user@${{ secrets.EC2_PUBLIC_IP }}:~/myapp
 
         # Restart the Go application (assuming you are running the app in the background or as a service)
-        ssh -i /tmp/private_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ec2-user@<EC2_PUBLIC_IP> << 'EOF'
+        ssh -i /tmp/private_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ec2-user@${{ secrets.EC2_PUBLIC_IP }} << 'EOF'
           # Stop the existing process
           pkill -f myapp || true
 
