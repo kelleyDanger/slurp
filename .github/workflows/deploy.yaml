@@ -48,6 +48,9 @@ jobs:
 
     - name: Deploy to EC2
       run: |
+        # Remove existing myapp binary if it exists
+        ssh -i /tmp/private_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ec2-user@${{ secrets.EC2_PUBLIC_IP }} "rm -f ~/myapp"
+
         # Copy the compiled Go app to the EC2 instance
         scp -i /tmp/private_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ./myapp ec2-user@${{ secrets.EC2_PUBLIC_IP }}:~/myapp
 
