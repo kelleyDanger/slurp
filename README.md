@@ -1,6 +1,8 @@
 # Slurp
 Run the website locally by running `go run main.go` and visiting [localhost:8080](localhost:8080).
 
+[Check it out live!](http://ec2-13-57-214-164.us-west-1.compute.amazonaws.com:8080/)
+
 # Table of Contents
 - [To Do](#todo)
 - [How to Install](#how-to-install)
@@ -78,7 +80,18 @@ dns: ec2-13-57-214-164.us-west-1.compute.amazonaws.com
 - Install go
 ```console
 sudo yum install golang -y
-```
+``` 
+- By default, EC2 instances block incoming traffic on non-standard ports. You need to open port 8080 in your instance’s Security Group:
+    - Go to the AWS EC2 Console.
+    - Navigate to Instances, select your instance.
+    - Under Security, find the Security Group associated with your instance.
+    - Click Edit inbound rules.
+    - Add a new rule:
+        - Type: Custom TCP
+        - Protocol: TCP
+        - Port Range: 8080
+        - Source: Choose 0.0.0.0/0 (public access) or restrict it to your IP if needed.
+    - Save the changes.
 
 ## Management Tools
 - Github: For version control and collaboration
