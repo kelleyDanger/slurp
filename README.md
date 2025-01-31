@@ -1,11 +1,12 @@
 # Slurp
 Run the website locally by running `go run main.go` and visiting [localhost:8080](localhost:8080).
 
-Table of Contents
+# Table of Contents
 - [To Do](#todo)
 - [How to Install](#how-to-install)
 - [Tech Stack](#tech-stack)
 - [Server](#server)
+- [Management Tools](#management-tools)
 - [Contributors](#contributors)
 
 ## TODO
@@ -64,16 +65,6 @@ Why: It allows rapid UI development with a consistent design language.
 What: Frontend library for making HTML hyperactive.
 Why: It allows you to add AJAX, CSS transitions, WebSockets, and more, directly in HTML attributes.
 
-### Frontend
-- HTMX
-- Tailwind CSS
-### Backend
-- Go
-
-## Management Tools
-- Github: For version control and collaboration
-- Discord: For communication and coordination
-
 
 ## Server
 The website is hosted on an Amazon Web Service (AWS) EC2 instance. 
@@ -89,6 +80,9 @@ dns: ec2-13-57-214-164.us-west-1.compute.amazonaws.com
 sudo yum install golang -y
 ```
 
+## Management Tools
+- Github: For version control and collaboration
+- Discord: For communication and coordination
 
 ## Contributors
 - Kelley Danger
