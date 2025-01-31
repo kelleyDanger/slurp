@@ -56,6 +56,9 @@ jobs:
           # Stop the existing process
           pkill -f myapp || true
 
+          # Set permissions to executable
+          chmod +x myapp
+
           # Start the new app
           nohup ./myapp > output.log 2>&1 &
         EOF
